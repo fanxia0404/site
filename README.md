@@ -6,3 +6,4 @@
 2. Render markdown file.
 3. Add posts tab.
 4. Design home page.
+5. Auto deploy site using CI/CD.
