@@ -2,7 +2,6 @@ import React from "react"
 
 import './index.scss'
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -10,9 +9,6 @@ const IndexPage = () => (
     <SEO title="Home" />
     <h1>Hi People</h1>
     <p>Welcome! Site is still under construction. Coming soon...</p>
-    <div style={{ maxWidth: `600px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
   </Layout>
 )
 

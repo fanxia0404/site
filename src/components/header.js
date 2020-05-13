@@ -1,34 +1,42 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Avatar from "./avatar"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `black`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+  <div className="Header">
+    <div className="Header-item mr-6">
+      <Link
+        className="Header-link f2 d-flex flex-items-center"
+        to="/"
+      >
+        <div 
+          className="CircleBadge CircleBadge--small float-left mr-3"
         >
-          {siteTitle}
-        </Link>
-      </h1>
+          <div className="width-full">
+            <Avatar />
+          </div>
+        </div>
+        <span>{siteTitle}</span>
+      </Link>
     </div>
-  </header>
+    <div className="Header-item">
+      <Link
+        className="Header-link f2"
+        to="/posts/"
+      >
+        Posts
+      </Link>
+    </div>
+    <div className="Header-item">
+      <Link
+        className="Header-link f2"
+        to="/projects/"
+      >
+        Projects
+      </Link>
+    </div>
+  </div>
 )
 
 Header.propTypes = {
