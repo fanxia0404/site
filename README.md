@@ -2,7 +2,7 @@
 
 ## Todo
 
-1. Configure Design System and styling.
+1. ~~Configure Design System and styling.~~
 2. Render markdown file.
 3. Add posts tab.
 4. Design home page.
