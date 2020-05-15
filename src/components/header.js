@@ -20,22 +20,6 @@ const Header = ({ siteTitle }) => (
         <span>{siteTitle}</span>
       </Link>
     </div>
-    <div className="Header-item">
-      <Link
-        className="Header-link f2"
-        to="/posts/"
-      >
-        Posts
-      </Link>
-    </div>
-    <div className="Header-item">
-      <Link
-        className="Header-link f2"
-        to="/projects/"
-      >
-        Projects
-      </Link>
-    </div>
   </div>
 )
 

@@ -2,9 +2,9 @@
 
 ## Todo
 
-1. ~~Configure Design System and styling.~~
-2. ~~Render markdown file.~~
-3. Add posts tab.
-4. Design home page.
-5. Add analytics plug-in.
-6. Auto deploy site using CI/CD.
+- ~~Configure Design System and styling.~~
+- ~~Render markdown file.~~
+- ~~Add posts tab.~~
+- Add analytics plug-in.
+- Design home page.
+- Add link to profile.
