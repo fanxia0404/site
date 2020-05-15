@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
       <div className="p-6">
         <main>{children}</main>
       </div>
-      <footer className="p-6 bg-gray-dark text-white">
+      <footer className="p-6 text-gray-dark">
         © {new Date().getFullYear()}, Fan Xia. All rights reserved.
       </footer>
     </>

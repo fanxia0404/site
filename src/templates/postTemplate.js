@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import '../pages/index.scss'
+import '../pages/styles.scss'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -14,7 +14,7 @@ export default function PostTemplate({
     <Layout>
       <SEO title={frontmatter.title} />
       <div
-          className="blog-post-content"
+          className="markdown-body"
           dangerouslySetInnerHTML={{ __html: html }}
         />
     </Layout>
