@@ -14,7 +14,7 @@ export default function PostTemplate({
     <Layout>
       <SEO title={frontmatter.title} />
       <div
-          className="blog-post-content"
+          className="markdown-body"
           dangerouslySetInnerHTML={{ __html: html }}
         />
     </Layout>
