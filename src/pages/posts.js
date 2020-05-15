@@ -10,12 +10,20 @@ const PostsPage = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => (
+      <div className="my-6 p-3" style={{ borderLeft: "4px solid #24292e"}}>
+        <PostLink key={edge.node.id} post={edge.node} />
+      </div>
+    ))
 
   return (
     <Layout>
       <SEO title="posts" />
-      <div>{Posts}</div>
+      <div className="d-flex flex-column">
+        <ul>
+          {Posts}
+        </ul>
+      </div>
     </Layout>
   )
 }
