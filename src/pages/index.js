@@ -1,4 +1,6 @@
 import React from "react"
+import './styles.scss'
+
 import PostLink from "../components/postLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
