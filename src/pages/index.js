@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
+import ReactGA from 'react-ga';
 import './styles.scss'
 
 import PostLink from "../components/postLink"
@@ -11,6 +12,12 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
+  useEffect(() => {
+    // Initialize 
+    ReactGA.initialize('UA-166849405-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
+
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => (
