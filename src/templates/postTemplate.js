@@ -13,10 +13,12 @@ export default function PostTemplate({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div
+      <div className="py-6 px-4 px-md-6">
+        <div
           className="markdown-body"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+      </div>
     </Layout>
   )
 }
