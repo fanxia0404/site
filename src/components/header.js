@@ -4,7 +4,7 @@ import React from "react"
 import Avatar from "./avatar"
 
 const Header = ({ siteTitle }) => (
-  <div className="Header">
+  <header className="Header">
     <div className="Header-item mr-6">
       <Link
         className="Header-link f2 d-flex flex-items-center"
@@ -20,7 +20,7 @@ const Header = ({ siteTitle }) => (
         <span>{siteTitle}</span>
       </Link>
     </div>
-  </div>
+  </header>
 )
 
 Header.propTypes = {
