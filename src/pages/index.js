@@ -21,8 +21,12 @@ const IndexPage = ({
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => (
-      <div className="mb-6 p-3" style={{ borderLeft: "4px solid #24292e"}}>
-        <PostLink key={edge.node.id} post={edge.node} />
+      <div 
+        key={edge.node.id}
+        className="mb-6 p-3"
+        style={{ borderLeft: "4px solid #24292e"}}
+      >
+        <PostLink post={edge.node} />
       </div>
     ))
 
