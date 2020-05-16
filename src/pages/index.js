@@ -26,10 +26,8 @@ const IndexPage = ({
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="d-flex flex-column">
-        <ul>
-          {Posts}
-        </ul>
+      <div className="py-6 px-4 px-md-6">
+        {Posts}
       </div>
     </Layout>
   )
