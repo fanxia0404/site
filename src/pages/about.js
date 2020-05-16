@@ -12,17 +12,17 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="About" />
     <div style={{height: "100vh", width: "100vw"}}>
-      <video playsinline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
+      <video playsInline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
         <source src={SnowboardVideo} type="video/mp4" />
       </video>
     </div>
     <div style={{height: "100vh", width: "100vw"}}>
-      <video playsinline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
+      <video playsInline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
         <source src={DogVideo} type="video/mp4" />
       </video>
     </div>
     <div style={{height: "100vh", width: "100vw"}}>
-      <video playsinline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
+      <video playsInline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
         <source src={DeerVideo} type="video/mp4" />
       </video>
     </div>
