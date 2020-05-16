@@ -8,25 +8,36 @@ import DogVideo from "../assets/shadow.mp4"
 import SnowboardVideo from "../assets/snowboard_park.mp4"
 import DeerVideo from "../assets/deer.mp4"
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="About" />
-    <div style={{height: "100vh", width: "100vw"}}>
-      <video playsInline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
-        <source src={SnowboardVideo} type="video/mp4" />
-      </video>
-    </div>
-    <div style={{height: "100vh", width: "100vw"}}>
-      <video playsInline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
-        <source src={DogVideo} type="video/mp4" />
-      </video>
-    </div>
-    <div style={{height: "100vh", width: "100vw"}}>
-      <video playsInline autoPlay loop muted style={{height: "100%", width: "100%", objectFit: "cover"}}>
-        <source src={DeerVideo} type="video/mp4" />
-      </video>
-    </div>
-  </Layout>
-)
+const AboutPage = () => {
+    const Videos = [SnowboardVideo, DogVideo, DeerVideo].map((video, index) => (
+        <div style={{
+            height: "100vh",
+            width: "100vw",
+            backgroundColor:  index % 2 == 0 ? "#ffffff" : "#24292e",
+            color:  index % 2 == 0 ? "#24292e" : "#ffffff"
+        }}>
+            <video
+                playsInline 
+                autoPlay 
+                loop 
+                muted 
+                style={{ height: "100%", width: "100%", objectFit: "cover" }}
+            >
+                <source src={video} type="video/mp4" />
+                <div class="blankslate">
+                    <h3 class="mb-1">Your browser doesn't support HTML5 video.</h3>
+                    <p>Here is a <a href={video}>link to the video</a> instead.</p>
+                </div>
+            </video>
+        </div>
+    ))
 
-export default NotFoundPage
+    return (
+        <Layout>
+            <SEO title="About" />
+            {Videos}
+        </Layout>
+    )
+}
+
+export default AboutPage
