@@ -3,9 +3,13 @@ import { Link } from "gatsby"
 
 const PostLink = ({ post }) => (
     <div>
-        <Link className="f2 link-gray-dark" to={post.fields.slug}>
-            {post.frontmatter.title} ({post.fields.date})
-        </Link>
+        <h2>
+            <Link className="link-gray-dark" to={post.fields.slug}>
+                {post.frontmatter.title}
+            </Link>
+        </h2>
+        <p className="text-gray">{post.fields.date} &middot; {post.timeToRead} min read</p>
+        <p>{post.excerpt}</p>
     </div>
 )
 

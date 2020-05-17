@@ -16,7 +16,7 @@ const IndexPage = ({
         .map(edge => (
             <div
                 key={edge.node.id}
-                className="mb-6 p-3"
+                className="mb-6 px-3"
                 style={{ borderLeft: "4px solid #24292e" }}
             >
                 <PostLink post={edge.node} />
@@ -39,6 +39,7 @@ export const pageQuery = graphql`
             edges {
                 node {
                     id
+                    timeToRead
                     excerpt
                     fields {
                         slug
