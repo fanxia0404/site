@@ -36,7 +36,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
+                name: `Fan Xia's personal site`,
                 short_name: `starter`,
                 start_url: `/`,
                 background_color: `#663399`,
