@@ -8,7 +8,7 @@ const PostLink = ({ post }) => (
                 {post.frontmatter.title}
             </Link>
         </h2>
-        <p className="text-gray">{post.fields.date}</p>
+        <p className="text-gray">{post.fields.date} &middot; {post.timeToRead} min read</p>
         <p>{post.excerpt}</p>
     </div>
 )

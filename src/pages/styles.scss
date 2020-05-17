@@ -6,3 +6,14 @@
 @import "@primer/css/avatars/index.scss";
 @import "@primer/css/markdown/index.scss";
 @import "@primer/css/blankslate/index.scss";
+@import "@primer/css/subhead/index.scss";
+
+.gatsby-highlight-code-line {
+    background-color: #fff5b1;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #dbab09;
+}

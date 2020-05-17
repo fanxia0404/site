@@ -22,7 +22,15 @@ module.exports = {
                 path: `${__dirname}/posts`,
             },
         },
-        `gatsby-transformer-remark`,
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    `gatsby-remark-autolink-headers`,
+                    `gatsby-remark-prismjs`,
+                ],
+            },
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
