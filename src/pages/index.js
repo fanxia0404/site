@@ -1,54 +1,52 @@
 import React from "react"
 import { graphql } from "gatsby"
-import './styles.scss'
+import "./styles.scss"
 
 import PostLink from "../components/postLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
+    data: {
+        allMarkdownRemark: { edges },
+    },
 }) => {
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => (
-      <div 
-        key={edge.node.id}
-        className="mb-6 p-3"
-        style={{ borderLeft: "4px solid #24292e"}}
-      >
-        <PostLink post={edge.node} />
-      </div>
-    ))
+    const Posts = edges
+        .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+        .map(edge => (
+            <div
+                key={edge.node.id}
+                className="mb-6 p-3"
+                style={{ borderLeft: "4px solid #24292e" }}
+            >
+                <PostLink post={edge.node} />
+            </div>
+        ))
 
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <div className="py-6 px-4 px-md-6">
-        {Posts}
-      </div>
-    </Layout>
-  )
+    return (
+        <Layout>
+            <SEO title="Home" />
+            <div className="py-6 px-4 px-md-6">{Posts}</div>
+        </Layout>
+    )
 }
 
 export default IndexPage
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            slug
-            title
-          }
+    query {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            edges {
+                node {
+                    id
+                    excerpt(pruneLength: 250)
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        slug
+                        title
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `
