@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 
 const PostLink = ({ post }) => (
     <div>
-        <Link className="f2 link-gray-dark" to={post.frontmatter.slug}>
-            {post.frontmatter.title} ({post.frontmatter.date})
+        <Link className="f2 link-gray-dark" to={post.fields.slug}>
+            {post.frontmatter.title} ({post.fields.date})
         </Link>
     </div>
 )

@@ -12,7 +12,7 @@ const IndexPage = ({
     },
 }) => {
     const Posts = edges
-        .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+        .filter(edge => !!edge.node.fields.date) // You can filter your posts based on some criteria
         .map(edge => (
             <div
                 key={edge.node.id}
@@ -25,7 +25,7 @@ const IndexPage = ({
 
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="Posts" />
             <div className="py-6 px-4 px-md-6">{Posts}</div>
         </Layout>
     )
@@ -35,14 +35,16 @@ export default IndexPage
 
 export const pageQuery = graphql`
     query {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        allMarkdownRemark(sort: { order: DESC, fields: [fields___date] }) {
             edges {
                 node {
                     id
-                    excerpt(pruneLength: 250)
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
+                    excerpt
+                    fields {
                         slug
+                        date(formatString: "MMMM DD, YYYY")
+                    }
+                    frontmatter {
                         title
                     }
                 }

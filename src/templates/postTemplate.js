@@ -9,10 +9,10 @@ export default function PostTemplate({
     data, // this prop will be injected by the GraphQL query below.
 }) {
     const { markdownRemark } = data // data.markdownRemark holds your post data
-    const { frontmatter, html } = markdownRemark
+    const { frontmatter, html, excerpt } = markdownRemark
     return (
         <Layout>
-            <SEO title={frontmatter.title} />
+            <SEO title={frontmatter.title} description={excerpt} />
             <div className="py-6 px-4 px-md-6">
                 <div
                     className="markdown-body"
@@ -25,11 +25,14 @@ export default function PostTemplate({
 
 export const pageQuery = graphql`
     query($slug: String!) {
-        markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+        markdownRemark(fields: { slug: { eq: $slug } }) {
             html
-            frontmatter {
-                date(formatString: "MMMM DD, YYYY")
+            excerpt
+            fields {
                 slug
+                date(formatString: "MMMM DD, YYYY")
+            }
+            frontmatter {
                 title
             }
         }
