@@ -9,12 +9,14 @@ export default function PostTemplate({
     data, // this prop will be injected by the GraphQL query below.
 }) {
     const { markdownRemark } = data // data.markdownRemark holds your post data
-    const { frontmatter, html, excerpt } = markdownRemark
+    const { html, excerpt, fields, frontmatter } = markdownRemark
     return (
         <Layout>
             <SEO title={frontmatter.title} description={excerpt} />
             <div className="py-6 px-4 px-md-6">
-                <div
+                <h1>{frontmatter.title}</h1>
+                <p className="mb-6">{fields.date}</p>
+                <article
                     className="markdown-body"
                     dangerouslySetInnerHTML={{ __html: html }}
                 />
